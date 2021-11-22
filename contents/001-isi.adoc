@@ -1,0 +1,25 @@
+
+== Data Asal 
+
+Basis data dengan _schema_ PBB pada sistem basis data Oracle.
+
+== Kegiatan Manipulasi Yang Dilakukan
+
+Melakukan pengambilan perubahan data ketetapan PBB-P2 untuk Desa Gunungtajem Kecamatan Salem.
+
+== Hasil Manipulasi
+
+Hasil manipulasi data dapat diakses pada alamat https://docs.google.com/spreadsheets/d/136E1AluFoe6JFNLGNYYMfV8AN_t2opcf07Ku9RWhpVw/edit?usp=sharing
+
+== _Script_ atau _command_ yang Digunakan Untuk Melakukan Manipulasi
+
+----
+select *
+from sppt_sejarah
+where kd_kecamatan='010'
+  and kd_kelurahan='016'
+  and tgl_cetak_lama <> tgl_cetak_baru
+  and tgl_cetak_baru > to_date('010320210000','DDMMYYYYHH24MI')
+  and thn_pajak_sppt='2021'
+order by kd_blok, no_Urut
+----
